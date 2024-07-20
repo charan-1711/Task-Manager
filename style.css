@@ -46,7 +46,7 @@ input{
     font-size: 18px;
 }
 
-/* --add button */
+/* --add button-- */
 #newTask{
     border: none;
     outline: none;
@@ -62,13 +62,13 @@ ul li{
     list-style: none;
     font-size: 17px;
     padding: 12px 8px 12px 50px;
-    user-select: none;
+    user-select: text;
     cursor: pointer;
     position: relative;
 }
 ul li::before{
     content: '';
-    position: absolute;
+    position:absolute;
     border-radius: 50%;
     height: 28px;
     width: 28px;
@@ -103,21 +103,26 @@ ul li span:hover{
 }
 
 /* ---edit button */
-ul li button{
+#editButton{
+    position: absolute;
+    right: 20;
+    top: 9px;
     border: none;
     outline: none;
     color: rgb(26, 24, 24);
-    padding: 20px 20px;
-    /* background: transparent; */
-    border-radius: 40px;
+    background-color: transparent;
+    border-radius: 50%;
     cursor: pointer;
     font-size: 18px;
-    margin-left: 65%;
-    height:20px;
+    margin-left: 60%;
+    margin-top: -2.1%;
+    margin-bottom: 0%;
+    height:50px;
+    width: 50px;
     align-items: center;
 }
 
-ul li button:hover{
+#editButton:hover{
     color: #443e3e;
     background: #edeef0;
 }
