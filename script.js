@@ -12,19 +12,19 @@ function addTask(){
         let span = document.createElement("span"); 
         span.innerHTML = "\u00d7";
         li.appendChild(span);
-        let button = document.createElement("button"); 
-        button.innerHTML = "Edit";
+        `<div>`
+        let button = document.createElement("button");
+        button.id ="editButton" ;
+        button.innerHTML = "View";
+        `</div>`;
         li.appendChild(button);
     }
+    // document.getElementById("editButton").onclick = function() {
+    //     window.location.href = "edit.html"; 
+    //     }
     taskInput.value='';
     saveData();
 };
-
-
-// const toggleTaskComplete = (index)=>{
-//     tasks[index].completed = !tasks[index].completed;
-//     updateTaskList();
-// };
 
 listItems.addEventListener("click",function(e){
     if(e.target.tagName === "LI"){
@@ -41,6 +41,12 @@ listItems.addEventListener("click",function(e){
     }
 }, false);
 
+function editTask () {
+    document.getElementById("editButton").onclick = function() {
+        window.location.href = "edit.html"; 
+    }
+}
+
 function saveData(){
     localStorage.setItem("data", listItems.innerHTML);
 }
@@ -48,18 +54,3 @@ function showTask(){
     listItems.innerHTML = localStorage.getItem("data");
 }
 showTask();
-
-
-
-
-
-const editTask = () => {
-    const taskInput = document.getElementById("taskInput");
-    taskInput.value = listItems.text;
-    updateTaskList();
-}
-
-const updateTaskList = ()=> {
-    const listItems = document.getElementById("listItems");
-    listItems.innerHTML = '';
-};
