@@ -26,11 +26,6 @@ function addTask(){
     saveData();
 };
 
-// const toggleTaskComplete = (index)=>{
-//     tasks[index].completed = !tasks[index].completed;
-//     updateTaskList();
-// };
-
 listItems.addEventListener("click",function(e){
     if(e.target.tagName === "LI"){
         e.target.classList.toggle("checked");
@@ -59,14 +54,3 @@ function showTask(){
     listItems.innerHTML = localStorage.getItem("data");
 }
 showTask();
-
-
-
-
-
-
-
-// const updateTaskList = ()=> {
-//     const listItems = document.getElementById("listItems");
-//     listItems.innerHTML = '';
-// };
